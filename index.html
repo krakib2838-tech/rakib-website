@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Najmi FF Experiment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                violet: '#8b5cf6', // Violet 500
+                purple: '#7c3aed', // Violet 600
+                black: '#050505',
+                dark: '#0A0A0A',
+                white: '#FFFFFF',
+              }
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              gaming: ['"Rajdhani"', 'sans-serif'],
+            },
+            animation: {
+              'rgb-flow': 'rgb-flow 3s ease infinite',
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'shine': 'shine 2s linear infinite',
+            },
+            keyframes: {
+              'rgb-flow': {
+                '0%': { backgroundPosition: '0% 50%' },
+                '50%': { backgroundPosition: '100% 50%' },
+                '100%': { backgroundPosition: '0% 50%' },
+              },
+              'shine': {
+                '0%': { transform: 'translateX(-100%)' },
+                '100%': { transform: 'translateX(100%)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html, body {
+        touch-action: pan-y;
+        overscroll-behavior-y: none;
+        -webkit-tap-highlight-color: transparent;
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #020617;
+        background-image: 
+          radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.25) 0%, transparent 60%),
+          linear-gradient(to bottom, #020617 0%, #0f172a 100%);
+        background-attachment: fixed;
+      }
+      img {
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
+        user-select: none;
+        pointer-events: none; /* Let clicks pass through if needed, handled by button */
+      }
+      /* Allow pointer events on images inside buttons so we don't break simple visuals, 
+         but usually pointer-events:none on img is best for scroll performance if parent button handles click */
+      button img {
+        pointer-events: none;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "firebase/": "https://aistudiocdn.com/firebase@^12.6.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.1",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-[#020617] text-white antialiased selection:bg-brand-violet selection:text-white">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
