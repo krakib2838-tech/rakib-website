@@ -1,12 +1,14 @@
 
-import React, { useState, useEffect } from 'react';
-import { Login } from './components/Login';
-import { Dashboard } from './components/Dashboard';
-import { AdminPanel } from './components/AdminPanel';
-import { database } from './firebase';
-import { ref, onValue, runTransaction } from 'firebase/database';
-import { AppConfig, ViewState } from './types';
-import { RGBText } from './components/RGBText';
+components/Login.tsx
+components/Dashboard.tsx
+components/AdminPanel.tsx
+components/RGBText.tsxcomponents/Login.tsx
+components/Dashboard.tsx
+components/AdminPanel.tsx
+components/RGBText.tsxcomponents/Login.tsx
+components/Dashboard.tsx
+components/AdminPanel.tsx
+components/RGBText.tsx
 import { AlertTriangle } from 'lucide-react';
 
 const App: React.FC = () => {
